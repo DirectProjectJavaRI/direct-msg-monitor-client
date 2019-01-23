@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>direct-msg-monitor-client</artifactId>    
     <name>Direct Project Message Monitor Client</name>
-    <version>6.0-SNAPSHOT</version>
+    <version>6.0</version>
     <description>Direct Project Message Monitor Client</description>
     <inceptionYear>2018</inceptionYear>
     <url>https://github.com/DirectProject/direct-msg-monitor-client</url> 
@@ -31,23 +31,15 @@
 	   <version>2.1.2.RELEASE</version>
    </parent>	   
 	<scm>
-		<url>scm:git:https://github.com/DirectProject/direct-msg-monitor-client.git</url>
-		<connection>scm:git:https://github.com/DirectProject/direct-msg-monitor-client.git</connection>
+		<url>scm:git:https://github.com/DirectProjectJavaRI/direct-msg-monitor-client.git</url>
+		<connection>scm:git:https://github.com/DirectProjectJavaRI/direct-msg-monitor-client.git</connection>
 	</scm>
   <licenses>
      <license>
         <name>New BSD License</name>
         <url>http://nhindirect.org/BSDLicense</url>
      </license>
-  </licenses>  
-	 <!-- Temp repository for Spring Boot Milestone -->
-	 <repositories>
-       <repository>
-           <id>spring-milestone</id>
-           <name>Spring Milestone Releases</name>
-           <url>https://repo.spring.io/milestone/</url>
-       </repository>
-    </repositories>       
+  </licenses>       
   <properties>
 	<spring-cloud-dependencies.version>Finchley.SR1</spring-cloud-dependencies.version>
   </properties>    
@@ -63,7 +55,7 @@
 		  <dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-starter-parent</artifactId>
-				<version>Greenwich.RC1</version>
+				<version>Greenwich.RELEASE</version>
 				<type>pom</type>
 				<scope>import</scope>
 		  </dependency>  		   			  		  			          					
@@ -73,7 +65,7 @@
 	    <dependency>
 			<groupId>org.nhind</groupId>
 			<artifactId>direct-msg-monitor-model</artifactId>
-			<version>6.0-SNAPSHOT</version>	    
+			<version>6.0</version>	    
 	    </dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -215,22 +207,22 @@
          </execution>
        </executions>
      </plugin>
-         <!--  for releases only
+
 	     <plugin>
 	      	<groupId>org.apache.maven.plugins</groupId> 
 	        <artifactId>maven-javadoc-plugin</artifactId>
 	        <version>2.6.1</version>
 	        <configuration>
-	          <additionalparam>-Xdoclint:none</additionalparam>
-	          <charset>UTF-8</charset>
-	          <docencoding>UTF-8</docencoding>
-	          <docfilessubdirs>true</docfilessubdirs>
-              <detectJavaApiLink>true</detectJavaApiLink>
-              <detectLinks>true</detectLinks>
-	          <source>1.6</source>
-	          <show>public</show>   
+			    <additionalparam>-Xdoclint:none</additionalparam>
+				<charset>UTF-8</charset>
+				<docencoding>UTF-8</docencoding>
+				<docfilessubdirs>true</docfilessubdirs>
+				<detectJavaApiLink>true</detectJavaApiLink>
+				<detectLinks>true</detectLinks>
+				<source>1.8</source>
+				<show>public</show>
 	          <excludePackageNames>
-	              org.nhindirect.common.mail.dsn.impl:org.nhindirect.common.tx.impl:org.nhindirect.common.tx.provider:org.nhindirect.common.tx.module:org.nhindirect.common.tooling:org.nhindirect.common.crypto.tools
+	              org.nhindirect.common.tx.impl
 	          </excludePackageNames>   	                      	          
 	        </configuration>
 	        <executions>
@@ -243,6 +235,7 @@
 	            </execution>
 	        </executions>		        
 	     </plugin>  
+         <!--  for releases only	     
 	     <plugin>
              <groupId>org.apache.maven.plugins</groupId>
              <artifactId>maven-gpg-plugin</artifactId>
@@ -263,29 +256,24 @@
 		<plugins>
 	      <plugin>
 	           <groupId>org.apache.maven.plugins</groupId>
-	           <artifactId>maven-site-plugin</artifactId>
-	           <version>3.7.1</version>
-	      </plugin> 
-	      <plugin>
-	           <groupId>org.apache.maven.plugins</groupId>
 	           <artifactId>maven-project-info-reports-plugin</artifactId>
 	           <version>2.9</version>
 	      </plugin>    
 	      <plugin>
 	      	<groupId>org.apache.maven.plugins</groupId> 
 	        <artifactId>maven-javadoc-plugin</artifactId>
-	        <version>3.0.1</version>
-	        <configuration>
-	          <additionalparam>-Xdoclint:none</additionalparam>
-	          <charset>UTF-8</charset>
-	          <docencoding>UTF-8</docencoding>
-	          <docfilessubdirs>true</docfilessubdirs>
-              <detectJavaApiLink>true</detectJavaApiLink>
-              <detectLinks>true</detectLinks>
-	          <source>1.8</source>
-	          <show>public</show>    
+	        <version>2.6.1</version>
+		        <configuration>
+			    <additionalparam>-Xdoclint:none</additionalparam>
+				<charset>UTF-8</charset>
+				<docencoding>UTF-8</docencoding>
+				<docfilessubdirs>true</docfilessubdirs>
+				<detectJavaApiLink>true</detectJavaApiLink>
+				<detectLinks>true</detectLinks>
+				<source>1.8</source>
+				<show>public</show>   
 	          <excludePackageNames>
-	              org.nhindirect.common.mail.dsn.impl:org.nhindirect.common.tx.impl:org.nhindirect.common.tx.provider:org.nhindirect.common.tx.module:org.nhindirect.common.tooling:org.nhindirect.common.crypto.tools
+	              org.nhindirect.common.tx.impl
 	          </excludePackageNames>      	           	          
 	        </configuration>
 	      </plugin>
@@ -307,7 +295,6 @@
 	        <plugin>
 	            <groupId>org.codehaus.mojo</groupId> 
 	            <artifactId>findbugs-maven-plugin</artifactId>
-	            <version>2.3</version> 
 	            <configuration>
 	                <effort>Max</effort>
 	                <excludeFilterFile>${project.basedir}/src/report/findbugs-exclude.xml</excludeFilterFile>
