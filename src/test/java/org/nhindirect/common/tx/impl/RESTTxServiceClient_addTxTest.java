@@ -1,6 +1,8 @@
 package org.nhindirect.common.tx.impl;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -12,7 +14,7 @@ import javax.mail.internet.InternetHeaders;
 import javax.mail.internet.MimeMessage;
 
 import org.apache.commons.io.IOUtils;
-import org.junit.Test;
+
 import org.nhindirect.common.tx.BaseTestPlan;
 import org.nhindirect.common.tx.SpringBaseTest;
 import org.nhindirect.common.tx.TestUtils;

@@ -58,7 +58,6 @@ public class TxParseUtils
 		
 		try
 		{
-			@SuppressWarnings("unchecked")
 			final Enumeration<String> henum = headers.getAllHeaderLines();
 			while (henum.hasMoreElements())
 				msg.addHeaderLine(henum.nextElement());
