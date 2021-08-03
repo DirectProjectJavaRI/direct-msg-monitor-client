@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>direct-msg-monitor-client</artifactId>    
     <name>Direct Project Message Monitor Client</name>
-    <version>8.0.0-SNAPSHOT</version>
+    <version>8.0.0</version>
     <description>Direct Project Message Monitor Client</description>
     <inceptionYear>2018</inceptionYear>
     <url>https://github.com/DirectProject/direct-msg-monitor-client</url> 
@@ -66,7 +66,7 @@
 	    <dependency>
 			<groupId>org.nhind</groupId>
 			<artifactId>direct-msg-monitor-model</artifactId>
-			<version>8.0.0-SNAPSHOT</version>	    
+			<version>8.0.0</version>	    
 	    </dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
