@@ -2,6 +2,7 @@ package org.nhindirect.common.tx;
 
 import java.io.File;
 import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +10,6 @@ import javax.mail.internet.MimeMessage;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import org.junit.Test;
 import org.nhindirect.common.tx.model.Tx;
 import org.nhindirect.common.tx.model.TxDetail;
 import org.nhindirect.common.tx.model.TxDetailType;
@@ -17,33 +17,20 @@ import org.nhindirect.common.tx.model.TxMessageType;
 
 ///CLOVER:OFF
 public class TestUtils 
-{
-	@Test
-	public void testDummy()
-	{
-		
-	}
-	
-	@SuppressWarnings("deprecation")
+{	
 	public static String readMessageFromFile(String fileName) throws Exception
 	{
-		return FileUtils.readFileToString(new File("./src/test/resources/messages/" + fileName));
+		return FileUtils.readFileToString(new File("./src/test/resources/messages/" + fileName), Charset.defaultCharset());
 	
 	}
-	
-	@SuppressWarnings("deprecation")
+
 	public static MimeMessage readMimeMessageFromFile(String fileName) throws Exception
 	{
-		InputStream str = IOUtils.toInputStream(readMessageFromFile(fileName));
-		
-		try
+		try (final InputStream str = IOUtils.toInputStream(readMessageFromFile(fileName), Charset.defaultCharset()))
 		{
 			return new MimeMessage(null, str);
 		}
-		finally
-		{
-			IOUtils.closeQuietly(str);
-		}
+
 	}
 	
 	
