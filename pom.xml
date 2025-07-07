@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>direct-msg-monitor-client</artifactId>    
     <name>Direct Project Message Monitor Client</name>
-    <version>8.1.0</version>
+    <version>8.2.0-SNAPSHOT</version>
     <description>Direct Project Message Monitor Client</description>
     <inceptionYear>2018</inceptionYear>
     <url>https://github.com/DirectProject/direct-msg-monitor-client</url> 
