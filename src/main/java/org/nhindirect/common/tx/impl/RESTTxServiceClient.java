@@ -21,17 +21,15 @@ THE POSSIBILITY OF SUCH DAMAGE.
 
 package org.nhindirect.common.tx.impl;
 
-import javax.mail.internet.InternetHeaders;
-import javax.mail.internet.MimeMessage;
+import jakarta.mail.internet.InternetHeaders;
+import jakarta.mail.internet.MimeMessage;
 
 import org.nhindirect.common.rest.exceptions.ServiceException;
 import org.nhindirect.common.tx.TxService;
-import org.nhindirect.common.tx.impl.feign.TxClient;
+import org.nhindirect.common.tx.impl.exchange.TxClient;
 import org.nhindirect.common.tx.model.Tx;
 import org.nhindirect.common.tx.TxDetailParser;
-import org.springframework.stereotype.Component;
 
-@Component
 public class RESTTxServiceClient implements TxService
 {
 	protected TxClient txClient;
