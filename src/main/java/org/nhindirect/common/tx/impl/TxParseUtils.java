@@ -3,10 +3,10 @@ package org.nhindirect.common.tx.impl;
 import java.util.Enumeration;
 import java.util.Map;
 
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.internet.InternetHeaders;
-import javax.mail.internet.MimeMessage;
+import jakarta.mail.MessagingException;
+import jakarta.mail.Session;
+import jakarta.mail.internet.InternetHeaders;
+import jakarta.mail.internet.MimeMessage;
 
 import org.nhindirect.common.tx.TxDetailParser;
 import org.nhindirect.common.tx.TxUtil;
