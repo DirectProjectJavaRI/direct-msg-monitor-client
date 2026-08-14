@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
     <groupId>org.nhind</groupId>    
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>direct-msg-monitor-client</artifactId>    
+    <artifactId>direct-msg-monitor-client</artifactId>
     <name>Direct Project Message Monitor Client</name>
-    <version>9.0.0-SNAPSHOT</version>
+    <version>9.0.0</version>
     <description>Direct Project Message Monitor Client</description>
     <inceptionYear>2018</inceptionYear>
     <url>https://github.com/DirectProject/direct-msg-monitor-client</url> 
@@ -59,7 +59,7 @@
 	    <dependency>
 			<groupId>org.nhind</groupId>
 			<artifactId>direct-msg-monitor-model</artifactId>
-			<version>9.0.0-SNAPSHOT</version>	    
+			<version>9.0.0</version>
 	    </dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -205,8 +205,8 @@
 	                </goals>
 	            </execution>
 	        </executions>		        
-	     </plugin>  
-         <!--  for releases only	     
+	     </plugin>
+         <!--  for releases only
 	     <plugin>
              <groupId>org.apache.maven.plugins</groupId>
              <artifactId>maven-gpg-plugin</artifactId>
@@ -220,8 +220,8 @@
               </execution>
             </executions>
             <version>3.0.1</version>
-        </plugin>	    
-         -->    
+        </plugin>
+         -->
         <plugin>
           <groupId>org.sonatype.central</groupId>
           <artifactId>central-publishing-maven-plugin</artifactId>
